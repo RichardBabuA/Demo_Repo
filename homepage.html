@@ -1,32 +1,122 @@
 <doctype!>
 <html>
-<body>
-<table border="1 px" align="center">
+
+    <title>My home Page</title>
+    <style>
+
+     body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     } 
+
+    table {
+      border-collapse: collapse;
+      box-shadow: 3px 3px grey;
+      z-index: -1; /* hide shadow behind image */
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 0 5px #999;
+      -webkit-box-shadow: 0 0 5px #999;
+      box-shadow: 0 0 5px #999;
+    }
+
+    tr td {
+      border-bottom : 1px solid gray; 
+      padding : 5px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: bold;
+      font-size: small;
+    }
+
+    .label {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .greetings {
+      color: blue;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .button {
+      background-color: darkcyan;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    </style>
+    <script>
+        // handles button click on 'click me' button
+        function callGreetings() {
+          var nameTag = document.getElementById("nameField");
+          var labelTag = document.getElementById("greetingLabel");
+
+          labelTag.innerHTML = "Welcome to my website - " + nameTag.value + " ! Have a good day.";
+          console.log('completed callGreeting successfully.');
+        }
+    </script>
+
+<body align="center">
+
+<table align="center" >
    <tr> 
-      <td> Name </td> 
-      <td> Johnathan </td>
-      <td rowspan = "5"> <img src="./047.jpeg" alt="johnathan" border=1 align="center" height=150 width=150> </td> 
+      <td class="label"> Name </td> 
+      <td > Johnathan Richard </td>
+      <td rowspan = "4"> <img src="./047.jpeg" alt="johnathan" align="center" height=150 width=150> </td> 
    </tr>
    <tr> 
-     <td> Birth Day </td>  
-     <td>  April-2 </td>
+     <td class="label" > Birth Day </td>  
+     <td>  April-2nd </td>
    </tr>
     <tr> 
-       <td> Address </td>  
-       <td> Vakiltownscape</td>
+       <td class="label" > Address </td>  
+       <td> Vakil Townscape</td>
    </tr>
 
    <tr>
-     <td> hobby </td>  
+     <td class="label"> Hobby </td>  
      <td> Sports, Music, Movies, Books </td>
    </tr>
 
    <tr>
-      <td> </td>  
-      <td align="center"> <a href="ayden.html">  Next </a> </td>
+      <td align="right" colspan="3"> 
+        <a href=""> Home </a> | 
+        <a href=""> Previous </a> | 
+        <a href=""> Next </a> |
+        <a href=""> Last </a> 
+    </td>
     </tr>
   </table>
 
-  
+  <br>
+
+  <div>
+    <label >Enter Your Name </label>
+    <input type="text" name="nameField" id="nameField" > 
+    <input type="button" class="button" value="click me" onclick="callGreetings()">
+  </div>
+  <br>
+  <br>
+  <div>
+      <label id="greetingLabel" class="greetings"> </label>
+  </div>
+
 </body>
 </html>
